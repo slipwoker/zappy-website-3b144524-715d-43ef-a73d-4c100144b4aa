@@ -1,0 +1,63 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### בית
+https://example.com
+שלי בחרה בשבילך את המוצרים הכי שווים מאלי אקספרס! בגדים, מטבח ועוד — הכל במחירים מדהימים. התחילי לגלות עכשיו.
+
+### קטגוריות
+https://example.com/categories
+בגדים, מטבח, עיצוב הבית ועוד — כל הקטגוריות שנבחרו ביד אוהבת. מצאי בדיוק מה שחיפשת במחירים שלא תאמיני. לחצי וגלי!
+
+### אודות שלי
+https://example.com/about
+שלי היא זו שחוסכת לך שעות של גלילה אינסופית! גלי את הסיפור מאחורי האוסף המאוצר ותביני למה אלפי קונות סומכות על הטעם שלה.
+
+### שאלות נפוצות
+https://example.com/faq
+איך מזמינים מאלי אקספרס לישראל? כמה זמן משלוח? כל השאלות שבוערות לך — עם תשובות ברורות שיהפכו אותך לקונה בטוחה ומנוסה.
+
+### צור קשר
+https://example.com/contact
+מצאת מוצר מדהים מאלי אקספרס שחייב להיות באתר? רוצה לשתף פעולה? כתבי לשלי עכשיו ויחד נבנה את קטלוג החלומות הבא שלך.
+
+### Products
+https://example.com/products
+המוצרים שלנו - Shelly Finds
+
+### Product Detail
+https://example.com/product/:slug
+פרטי המוצר - Shelly Finds
+
+### Category
+https://example.com/category/:slug
+מוצרים - Shelly Finds
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt
