@@ -415,16 +415,308 @@
         </section>
 
 
-<section id="layout-1774516034493" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 60px 0px; direction: rtl;" data-component-id="image-text-left">
-  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-  <div class="image-text-left-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-    <div>
-      <h2 style="font-size: 32px; font-weight: 700; color: #1F2937; margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif;"><font color="#ffffff">אגרטל בצבע בטון לעיצוב הבית</font></h2>
-      
+<section style="width:100%;max-width:100%;box-sizing:border-box;position:relative;overflow:hidden;background:var(--bg-dark);direction:rtl;font-family:system-ui,sans-serif;" data-zappy-section="true" class="section" id="layout-1774516034493">
+<style>
+  .vase-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+  }
+
+  .vase-bg-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .vase-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .vase-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(107,43,69,0.92) 0%, rgba(61,36,48,0.75) 40%, rgba(30,15,25,0.55) 70%, rgba(0,0,0,0.2) 100%);
+    z-index: 1;
+  }
+
+  .vase-content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 100px 6vw 80px;
+    box-sizing: border-box;
+  }
+
+  .vase-text-panel {
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 28px;
+  }
+
+  .vase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,141,178,0.18);
+    border: 1.5px solid var(--primary);
+    border-radius: var(--radius-badge);
+    padding: 8px 20px;
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+
+  .vase-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--primary);
+    animation: pulseDot 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulseDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.6); opacity: 0.5; }
+  }
+
+  .vase-heading {
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--text-light);
+    margin: 0;
+    text-align: right;
+    position: relative;
+  }
+
+  .vase-heading span {
+    display: block;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .vase-divider-line {
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--gradient-primary);
+    align-self: flex-end;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vase-divider-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    background: rgba(255,255,255,0.6);
+    animation: shimmerLine 2.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmerLine {
+    0% { right: -100%; }
+    100% { right: 150%; }
+  }
+
+  .vase-corner-decoration {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(245,141,178,0.2);
+    border-radius: 50%;
+    z-index: 2;
+    animation: rotateSlow 20s linear infinite;
+  }
+
+  .vase-corner-decoration::before {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(245,141,178,0.12);
+    border-radius: 50%;
+  }
+
+  @keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .vase-bottom-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    z-index: 10;
+  }
+
+  .vase-floating-card {
+    position: absolute;
+    bottom: 60px;
+    left: 6vw;
+    background: rgba(255,253,254,0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(245,141,178,0.25);
+    border-radius: var(--radius-card);
+    padding: 18px 24px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    animation: floatCard 4s ease-in-out infinite;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .vase-floating-card .icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .vase-floating-card .icon-circle svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+  }
+
+  .vase-floating-card .card-text {
+    text-align: right;
+  }
+
+  .vase-floating-card .card-text strong {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .vase-floating-card .card-text span {
+    color: var(--primary);
+    font-size: 0.78rem;
+  }
+
+  @media (max-width: 768px) {
+    .vase-section {
+      min-height: 100svh;
+    }
+    .vase-content-wrapper {
+      padding: 110px 24px 160px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .vase-text-panel {
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+    .vase-heading {
+      text-align: center;
+    }
+    .vase-divider-line {
+      align-self: center;
+    }
+    .vase-corner-decoration {
+      width: 100px;
+      height: 100px;
+      top: 20px;
+      left: 20px;
+    }
+    .vase-floating-card {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 30px;
+      white-space: nowrap;
+      animation: floatCardMobile 4s ease-in-out infinite;
+    }
+    @keyframes floatCardMobile {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-6px); }
+    }
+  }
+</style>
+
+<div class="vase-section">
+
+  <!-- Background Image -->
+  <div class="vase-bg-image">
+    <img alt="תיאור תמונה" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" src="/assets/business-general-service-upload-1774516334678.webp" data-placeholder="layout-image-1774516034493-o9b7bks1r" data-context="תיאור תמונה" data-zappy-editable-image="true">
+  </div>
+
+  <!-- Dark overlay -->
+  <div class="vase-overlay"></div>
+
+  <!-- Rotating circle decoration -->
+  <div class="vase-corner-decoration"></div>
+
+  <!-- Main content -->
+  <div class="vase-content-wrapper">
+    <div class="vase-text-panel">
+
+      <div class="vase-badge">עיצוב הבית</div>
+
+      <h2 class="vase-heading">
+        אגרטל בצבע בטון
+        <span>לעיצוב הבית</span>
+      </h2>
+
+      <div class="vase-divider-line"></div>
+
     </div>
-    <div data-zappy-zoom-wrapper="true" data-element-id="img-1774516035384-1iaurcuw6" data-element-type="image" data-zappy-zoom-wrapper-width="538px" data-zappy-zoom-wrapper-height="538px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 538px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 538px !important; display: block !important;"><img data-placeholder="layout-image-1774516034493-o9b7bks1r" data-context="תיאור תמונה" data-zappy-editable-image="true" src="/assets/business-general-service-upload-1774516334678.webp" alt="תיאור תמונה" style="width: 100.062% !important; height: 100% !important; display: block; border-radius: 8px; object-fit: cover; object-position: 50% 50%; max-width: none !important; margin: 0px !important; position: absolute !important; left: -0.0309962% !important; top: 0% !important; max-height: none !important" class="layout-placeholder-image zappy-editable-image" data-element-type="image" data-element-id="img-1774516035384-1iaurcuw6" data-zappy-zoom="1" data-zappy-original-width="537.6666870117188" data-zappy-original-height="538"></div>
   </div>
+
+  <!-- Floating info card -->
+  <div class="vase-floating-card">
+    <div class="icon-circle">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C8 2 6 6 6 10c0 5 4 9 6 10 2-1 6-5 6-10 0-4-2-8-6-8z" stroke-linejoin="round" stroke-linecap="round"></path>
+        <circle cx="12" cy="10" r="2"></circle>
+      </svg>
+    </div>
+    <div class="card-text">
+      <strong>מוצר עיצוב יוקרתי</strong>
+      <span>ממליץ בחום ✨</span>
+    </div>
   </div>
+
+  <!-- Bottom accent line -->
+  <div class="vase-bottom-accent"></div>
+
+</div>
 </section>
 
 
@@ -644,34 +936,6 @@
           observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
         });
       }, 500);
-    })();
-    </script>
-
-    <script>
-    (function(){
-      if(window.innerWidth>768)return;
-      function fixZW(){
-        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
-          var cw=w.style.getPropertyValue('width');
-          if(!cw||cw==='100%')return;
-          w.style.setProperty('width','100%','important');
-          w.style.setProperty('max-width','100%','important');
-          w.style.setProperty('height','auto','important');
-          var img=w.querySelector('img');
-          if(img){
-            img.style.setProperty('position','relative','important');
-            img.style.setProperty('width','100%','important');
-            img.style.setProperty('height','auto','important');
-            img.style.setProperty('max-width','100%','important');
-            img.style.setProperty('max-height','400px','important');
-            img.style.setProperty('object-fit','cover','important');
-            img.style.setProperty('left','0','important');
-            img.style.setProperty('top','0','important');
-          }
-        });
-      }
-      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixZW);
-      else setTimeout(fixZW,50);
     })();
     </script>
 </body>
